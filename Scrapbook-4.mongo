@@ -1,0 +1,747 @@
+db.employees.find().pretty();
+
+// Inserting 14 documents into employees collection
+db.employees.insertMany(
+        [
+    {
+        "empId": 1,
+        "empName": "John",
+        "salary": 40000,
+        "department": "ETA",
+        "machineId": 1001,
+        "experience": [
+            {
+                "role": "Systems Engineer",
+                "roleExperience": 1.7
+            },
+            {
+                "role": "Senior Systems Engineer",
+                "roleExperience": 1.8
+            },
+            {
+                "role": "Technology Analyst",
+                "roleExperience": 1.3
+            }
+        ]
+    },
+    {
+        "empId": 2,
+        "empName": "Maria",
+        "salary": 45000,
+        "department": "IVS",
+        "experience": [
+            {
+                "role": "Systems Engineer",
+                "roleExperience": 1.7
+            },
+            {
+                "role": "Senior Systems Engineer",
+                "roleExperience": 1.6
+            },
+            {
+                "role": "Technology Analyst",
+                "roleExperience": 1.1
+            }
+        ]
+    },
+    
+    {
+        "empId": 3,
+        "empName": "jack",
+        "salary": 43000,
+        "department": "ECSADM",
+        "machineId": 1002,
+        "experience": [
+            {
+                "role": "Systems Engineer",
+                "roleExperience": 1.7
+            },
+            {
+                "role": "Senior Systems Engineer",
+                "roleExperience": 1.3
+            },
+            {
+                "role": "Technology Analyst",
+                "roleExperience": 0.6
+            }
+        ]
+    }
+    
+    
+    
+    ,
+    {
+        "empId": 4,
+        "empName": "Emily",
+        "salary": 31000,
+        "department": "DX",
+        "experience": [
+            {
+                "role": "Systems Engineer",
+                "roleExperience": 1.7
+            },
+            {
+                "role": "Senior Systems Engineer",
+                "roleExperience": 0.3
+            }
+        ]
+    },
+    {
+        "empId": 5,
+        "empName": "Steve",
+        "salary": 51000,
+        "department": "SGTSES",
+        "machineId": 1003,
+        "experience": [
+            {
+                "role": "Systems Engineer",
+                "roleExperience": 1.7
+            },
+            {
+                "role": "Senior Systems Engineer",
+                "roleExperience": 1.3
+            },
+            {
+                "role": "Technology Analyst",
+                "roleExperience": 2.6
+            },
+            {
+                "role": "Technology Lead",
+                "roleExperience": 0.4
+            }
+        ]
+    },
+    {
+        "empId": 6,
+        "empName": "Stephen",
+        "salary": 25000,
+        "department": "DXEMP",
+        "experience": [
+            {
+                "role": "Systems Engineer",
+                "roleExperience": 1.0
+            }
+        ]
+    },
+    {
+        "empId": 7,
+        "empName": "Kieron",
+        "salary": 35000,
+        "department": "IND",
+        "machineId": 1004,
+        "experience": [
+            {
+                "role": "Systems Engineer",
+                "roleExperience": 1.7
+            },
+            {
+                "role": "Senior Systems Engineer",
+                "roleExperience": 0.8
+            }
+        ]
+    },
+    {
+        "empId": 8,
+        "empName": "Kyle",
+        "salary": 29000,
+        "experience": [
+            {
+                "role": "Systems Engineer",
+                "roleExperience": 1.3
+            }
+        ]
+    },
+    {
+        "empId": 9,
+        "empName": "Charles",
+        "salary": 49000,
+        "machineId": 1005,
+        "experience": [
+            {
+                "role": "Systems Engineer",
+                "roleExperience": 1.7
+            },
+            {
+                "role": "Senior Systems Engineer",
+                "roleExperience": 1.6
+            },
+            {
+                "role": "Technology Analyst",
+                "roleExperience": 1.3
+            }
+        ]
+    },
+    {
+        "empId": 10,
+        "empName": "Robin",
+        "salary": 37000,
+        "department": "DXEMP",
+        "experience": [
+            {
+                "role": "Systems Engineer",
+                "roleExperience": 1.7
+            },
+            {
+                "role": "Senior Systems Engineer",
+                "roleExperience": 1.2
+            }
+        ]
+    },
+    {
+        "empId": 11,
+        "empName": "Tom",
+        "salary": 54000,
+        "department": "IND",
+        "machineId": 1006,
+        "experience": [
+            {
+                "role": "Systems Engineer",
+                "roleExperience": 1.7
+            },
+            {
+                "role": "Senior Systems Engineer",
+                "roleExperience": 1.6
+            },
+            {
+                "role": "Technology Analyst",
+                "roleExperience": 1.7
+            },
+            {
+                "role": "Technology Lead",
+                "roleExperience": 1.5
+            }
+        ]
+    },
+    {
+        "empId": 12,
+        "empName": "Mark",
+        "salary": 28000,
+        "experience": [
+            {
+                "role": "Systems Engineer",
+                "roleExperience": 1.2
+            }
+        ]
+    },
+    {
+        "empId": 13,
+        "empName": "Mike",
+        "salary": 39000,
+        "machineId": 1007,
+        "experience": [
+            {
+                "role": "Systems Engineer",
+                "roleExperience": 1.7
+            },
+            {
+                "role": "Senior Systems Engineer",
+                "roleExperience": 1.8
+            },
+            {
+                "role": "Technology Analyst",
+                "roleExperience": 0.3
+            }
+        ]
+    },
+    {
+        "empId": 14,
+        "empName": "Chris",
+        "salary": 23000,
+        "department": "ETA",
+        "machineId": 1008,
+        "experience": [
+            {
+                "role": "Systems Engineer",
+                "roleExperience": 0.5
+            }
+        ]
+    }
+]);
+
+// Find employees from ETA department
+db.employees.find({"department": "ETA"});
+
+// Find Employee names and experience from ETA department
+db.employees.find({ "department":  "ETA" }, { "empName":  1, "experience": 1, "_id": 0});
+
+// Fetch all employee names
+db.employees.find({}, {"empName":  1,  "_id": 0});
+
+// Fetch name and salary of the employee with id "6"
+db.employees.findOne({"empId": 6}, {"empName": 1, "salary": 1})
+
+
+// Find will return empty array if no match found
+db.employees.find({"empName": "srikanth"});
+
+// FindOne will return null if no match found
+db.employees.findOne({"empName": "Srikanth"});
+
+// FindOne will return 1st match even if the condition match multiple documents
+
+// FInd method will search for entire string provided in conditions. case is also important
+db.employees.findOne({"empName": "STEPHEN"});
+
+// Find all employees whose salary greater than 40000
+db.employees.find({"salary": {$gte: 40000}}, {"empId": 1, "salary": 1, "_id": 0});
+
+// Find all employees who are not belong to ETA dept
+db.employees.find({"department":  {$ne: "ETA"}}, {"empName": 1, "department": 1, "_id":0});
+
+// Find all employees belongs to either ETA or IVS dept
+db.employees.find({"department":  {$in: ["ETA", "IVS"]}});
+
+// Find all employees not belongs to either ETA or IVS dept
+db.employees.find({"department":  {$nin: ["ETA", "IVS"]}}); 
+
+// Find all employees not belongs to either ETA or IVS dept
+// but must belongs to any other department
+db.employees.find(
+        {"department":  {$exists: true, $nin: ["ETA", "IVS"]}},
+        {"experience":0}
+);
+
+// Find employees who has done atleast two roles
+// check the size of experience array in the document if size>2
+// NOTE: $size needs exact number not range
+db.employees.find(
+        {"experience": {$size: 2}}
+);
+
+//Fetch all employee documents where empName starts with "J"
+// =========> Not working
+db.employees.find(
+        {"empName":  { $regex: /^J+/, $options: "i"}}
+);
+
+// Find details of employees from ETA or IVS dept and Salary > 30000
+db.employees.find(
+{
+        $and: [
+                {"department":  { $in: ["ETA", "IVS"]}}, // To check the department
+                {"salary": {$gt: 30000}}
+        ]
+}
+);
+
+db.employees.find({},{"experience": 1, "_id": 0});
+
+
+// Find employees with role Systems Engineer and sys engineer exp less than or equal to 1 year
+// ===================> (doubt) this wont work see $elemMatch
+db.employees.find({
+        $and:[
+                {"experience.role": "Systems Engineer"},
+                {"experience.roleExperience": {$gte: 1}}
+        ]
+});
+
+// Fetch those employees whose machine Id not greater than 1002
+db.employees.find(
+{
+        "machineId":  {$not: {$gt: 1002}}
+});
+
+// employees who worked in technology lead
+db.employees.find({"experience.role": "Technology Lead"}, 
+{"_id": 0, "empName": 1, "experience.role": 1});
+
+// employees  who worked in technology lead for more than 1 year
+db.employees.find({
+        "experience":  {
+                $elemMatch: {
+                        "role": "Technology Lead",
+                        "roleExperience": {$gt: 1.0}
+                }
+        }
+});
+
+// Employee who worked Technology Analyst role for less than 1yr and Senior Systems Engineer for more than 1.5yr
+db.employees.find({
+        "experience": {
+                $all:[
+                        {
+                                $elemMatch: {
+                                "role": "Technology Analyst",
+                                 "roleExperience": {$lt: 1.0}
+                                 }
+                        },
+                        {
+                                $elemMatch: {
+                                        "role":  "Senior Systems Engineer",
+                                        "roleExperience": {$gt: 1.5}
+                                        }
+                                }
+                ]
+        }
+});
+
+// Try using and for above query
+db.employees.find({
+        // $and is top level operator so it should be infront
+        $and:[
+                {
+                        "experience": { 
+                                $elemMatch: {
+                                        "role": "Technology Analyst",
+                                        "roleExperience": {$lt: 1.0}
+                                 }
+                        }
+                },
+                {
+                        "experience": { 
+                                $elemMatch: {
+                                        "role":  "Senior Systems Engineer",
+                                        "roleExperience": {$gt: 1.5}
+                                 }
+                        }
+                }
+        ]
+});
+
+
+// ####### UPDATE OPERATIONS ###########
+
+// update salary to 42000 for employeeId = 6
+db.employees.updateOne(
+    { "empId": 6 },
+    { $set: { "salary": 42000 } }
+);
+
+// update salary of all employee of ETA dept
+db.employees.updateMany(
+    { "department": "ETA" },
+    { $set: { "salary": 42000 }}
+);
+
+// update the salary of the employees who are from ETA dept to 43000 using update()
+// update command by default works as updateOne().
+db.employees.update(
+    { "department": "ETA"},
+    { $set: { "salary": 43000}}
+);
+
+// In order to update command works like updateMany include { multi: true }
+db.employees.update(
+    { "department": "ETA"},
+    { $set: { "salary": 44000}},
+    { multi: true }
+);
+
+//  ********** Note: Without $set the update command will override the entire document
+
+ // Increase the salary of every employee of ETA dept by 2000 from their current salary
+ db.employees.updateMany(
+    {"department": "ETA"},
+    {$inc: {"salary": 2000}}
+);
+
+// Decrease the salary of employee of ETA dept by 2000
+db.employees.updateMany(
+    { "department": "ETA" },
+    { $inc: { "salary":  -2000 } }
+);
+
+// Increase the salary by 10 % for all the employees of ETA dept
+// 10% => multiply with 1.1
+db.employees.updateMany(
+    { "department": "ETA"},
+    { $mul: { "salary": 1.1 } }
+);
+
+// Update the value of a field if the field value is < specified value
+db.employees.updateMany(
+    {},
+    {$max: { "salary": 30000 } }
+);
+
+// Each employee should have 50000 or less
+db.employees.updateMany(
+    {},
+    {$min : {"salary": 50000}}
+);
+
+ // Remove department and MachineId for empId:1
+ db.employees.updateOne(
+    {"empId": 1},
+    {$unset: {"department": "", "machineId": ""}}
+ );
+
+ // update salary to 40000 for all employees of dept 'A'
+ // we know there is no department named 'A'
+db.employees.updateMany(
+    {"department": "A"},
+    {$set: {"salary": 40000}},
+    {upsert: true}
+);
+
+// $push operation
+// update role and experience of empId: 14
+// If field not present it will create the document
+db.employees.updateOne(
+    { empId: 14 },
+    { $push: {experience: {
+        role: "Senior Systems Engineer",
+        roleExperience: 0.1
+    }}}
+);
+
+// To avoid duplicates in above operation use
+// $addToSet operator
+db.employees.updateOne(
+    { empId: 14 },
+    { $addToSet: {experience: {
+        role: "Senior Systems Engineer",
+        roleExperience: 0.1
+    }}}
+);
+
+// Push object to array using $push
+db.employees.updateOne(
+    { empId: 14},
+    {$push: {experience: {
+        "role": "Associate consultant",
+        "roleExperience": 1.5
+    }}}
+);
+
+// $push will add entire array if supplied with multiple objects
+// To do efficiently use $each
+db.employees.updateOne(
+    { empId: 14},
+    {$push: {experience: {$each: [
+        {
+        "role": "Associate consultant",
+        "roleExperience": 1.5
+    },
+    {
+        "role": "Senior Associate consultant",
+        "roleExperience": 1
+    }
+    ]}}}
+);
+
+// push operation will add objects at the end of the array to add at certain position
+// use $position 
+db.employees.updateOne(
+    {empId: 14},
+    { $push: {
+        experience: {
+            $each:[
+                {
+                    "role": "Systems Engineer Trainee",
+                    "roleExperience": 0.4
+                }
+            ],
+            $position: 0
+        }
+    }}
+);
+
+// check the updates to empId: 14
+db.employees.findOne({"empId": 14});
+
+// update in  nested document of array
+// update roleExperience of systems engineer role of empId:1
+// $ will identify the matching document and update in that array
+db.employees.updateOne({$and: [
+    {empId: 1},
+    {"experience.role": "Systems Engineer"}]},
+    {$set: {"experience.$.roleExperience": 2.0}}
+);
+
+db.employees.findOne({empId:14});
+
+// Remove first or last element from the array using $pop operator
+// { $pop: { filed1: 1 | -1} } , 1 for last element and -1 for first element
+db.employees.updateOne( 
+    { empId: 1},
+    { $pop: { experience: -1 }}
+);
+
+// $pop only removes from the ends to remove specific value from array use $pull
+db. employees.updateOne( 
+    {"empId": 14},
+    { $pull: {experience: {
+        "role": "Systems Engineer Trainee",
+        "roleExperience": 0.4
+    }}}
+);
+
+// $pullAll removes multiple values from the array in a document
+db.employees.updateOne( 
+    { empId: 13 },
+    { $pullAll: { experience: [
+        {
+            "role": "Systems Engineer",
+            "roleExperience": 1.7
+        },
+        {
+            "role": "Senior Systems Engineer",
+            "roleExperience": 1.8
+        }
+    ]}}
+);
+
+// Delete the details of the employee with empId: 6
+db.employees.deleteOne( { "empId": 6} );
+
+// Delete the details of all employees from ETA dept
+db.employees.deleteMany( {"department": "ETA"});
+
+// Aggregation operations
+// Aggregatio pipelines are the series of operations to apply various operations
+
+// fetch all the unique department from the employees collection
+db.employees.distinct("department");
+
+// Fetch all the distinct roles in which the employees worked
+db.employees.distinct("experience.role");
+
+// Count Technology Analysts
+db.employees.countDocuments({ "experience.role ": "Technology Analyst"});
+
+// Fetch all employees who belong to any department
+// $match  in pipeline stage similar to find query
+db.employees.aggregate([
+    { $match : { "department": { $exists: true }}}
+]);
+
+// $project
+db.employees.aggregate([
+    { $match: {"department": { $exists: true }}},
+    {$project : {"empName": 1,  _id:0}}
+]);
+
+// Group the employees based on the departmet
+db.employees.aggregate([
+    {"$group": {"_id": "$department"}}
+]);
+
+// But above contains null this is bcz some of the employees do not belong to any dept
+// To filter those documents add a stage before the aggregation
+db.employees.aggregate([
+    {"$match": {"department": {$exists: true}}},
+    {"$group": {"_id": "$department"}}
+])
+
+// Grouping fields based on nested fields and mutiple fields
+db.employees.aggregate([
+    { "$group": { _id: "$experience.role"} }
+]);
+
+// Group by department as well as salary (multiple fields)
+db.employees.aggregate([
+    { "$group": { _id: { "department": "$department", "salary": "$salary"}}}
+]);
+// $count operator
+db.employees.aggregate([
+    {$count: "Noof Ermployees"}
+]);
+
+// Count the no.of departments
+// 1. group by department
+// 2. count the documents
+db.employees.aggregate([
+    { "$group": {_id: "$department"}},
+    {"$count": "Noof departments"}
+]);
+
+// $sort -1 for descending order 1 for ascending order
+db.employees.aggregate([
+    { $sort: {"salary": -1}},
+    {$limit: 3}
+]);
+
+// $skip operator.
+// Fetch the employee document with 3rd highest salary
+// sort -> limit3 -> skip2 then 3rd one left
+db.employees.aggregate([
+    {$sort: {salary: -1}},
+    {$limit: 3},
+    {$skip: 2}
+])
+
+// $unwind operator
+// To fetch a particular object from array of nested objects
+// The whole array is splitted into separate documents with repeated values
+db.employees.aggregate([
+    { "$unwind":  "$experience"}
+]);
+// see the above query output
+db.employees.aggregate([
+    { "$unwind":  "$experience"},
+    { $match: { $and: [
+        { empId: 1},
+        { "experience.role": "Technology Analyst"}
+    ]}}
+]);
+
+// Accumulators in aggregation
+// $min $max accumulator 
+db.employees.aggregate([
+    { $group: {
+        _id: "$department",
+        "MaximumSalary": { $max: "$salary"},
+        "MinimumSalary": { $min: "$salary"}
+    }}
+]);
+
+// $push operation
+// Fetch the list of [employee name, salary] for each department
+db.employees.aggregate([
+    { $group: {
+        _id: "$department",
+        "employeeList": {
+            $push: {
+                "employeeName": "$empName",
+                salary: "$salary"
+            }
+        }
+    }}
+]);
+
+// String operations
+// $concat
+db.employees.aggregate([
+    { "$project": { employeeData: {
+        $concat: ["$empName", " - ", "$department"]
+    }, _id: 0}}
+]);
+// In above query either of empName and department is null, entire thing is null
+// Instead we can use $ifNull to introduce NA in result in place of null
+db.employees.aggregate([
+    { "$project": { employeeData: {
+        $concat: [ 
+            { $ifNull: [ "$empName", "NA" ] },
+            " - ", 
+            {$ifNull: ["$department", "NA"]}
+            ]
+    }, _id:0}}
+]);
+
+// Date Operators
+// $year, $month, $hour, $minute ,$ second
+// $dateToString
+// Assume each employee document contains dateOfBirth field.
+db.employees.aggregate([
+    { $project: {
+        Birthday : {
+            $dateToString: {
+                date: "$dateOfBirth",
+                format: "%Y-%m-%d"
+            }
+        }, _id: 0
+    }}
+]);
+// It should result in { Birthday: "1994-09-09" }
+// Other format specifiers include %H- hours, %M- Minutes %S- seconds %L- Milliseconds
+
+// Indexing
+db.employees.createIndex({ salary: -1 });
+
+// get indexes
+db.employees.getIndexes();
+
+// Drop Index
+db.employees.dropIndex("salary_-1");
